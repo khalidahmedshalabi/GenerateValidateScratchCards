@@ -1,0 +1,9 @@
+/* small screens */
+@media screen and (max-width: 48em)
+{
+    .row
+    {
+        padding-bottom: 1%;
+        margin-bottom: 6%;
+    }
+}
