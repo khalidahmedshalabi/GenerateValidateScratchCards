@@ -19,6 +19,7 @@ var LastCreatedCardNum;
 
 function Log(cls, message)
 {
+    $('html, body').animate({scrollTop : 0}, 500);
     $(".logs_wrapper").prepend('<div class="row '+ cls +'">'+ message +'</div>');
 }
 
@@ -200,9 +201,12 @@ function RegisterCard(recharge_amount)
     LastCreatedCardNum = finalNum;
 }
 
+
 // Main function
 function main()
 {
+    Log("info", "Use the input boxes below to create a new card or check one that has already been created");
+    /*
     // Create some cards with different recharge values
     RegisterCard(25);
     RegisterCard(45);
@@ -218,6 +222,7 @@ function main()
         ReadCard("4881759144048530");
         ReadCard(LastCreatedCardNum);
     }, 1000);
+    */
 }
 
 // Fire main function

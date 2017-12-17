@@ -6,4 +6,15 @@
         padding-bottom: 1%;
         margin-bottom: 6%;
     }
+
+    .inputs_wrapper
+    {
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+
+    input
+    {
+        padding: 1%;
+    }
 }
