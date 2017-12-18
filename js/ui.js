@@ -1,29 +1,39 @@
+$("#new_card").focus();
+
 $('#new_card').on('keypress', function (e) {
-     if(e.which === 13) {
-         //Disable textbox to prevent multiple submit
-        $(this).attr("disabled", "disabled");
+    if(e.which === 13) {
+        var value = $(this).val();
+        if(value)
+        {
+            //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
 
-        RegisterCard(parseInt($(this).val()));
-        $(this).val(null);
+            RegisterCard(parseInt(value));
+            $(this).val(null);
 
-        //Enable the textbox again if needed.
-        $(this).removeAttr("disabled");
+            //Enable the textbox again if needed.
+            $(this).removeAttr("disabled");
 
-        $(this).focus();
-     }
+            $(this).focus();
+        }
+    }
 });
 
 $('#check_card').on('keypress', function (e) {
-     if(e.which === 13) {
-         //Disable textbox to prevent multiple submit
-        $(this).attr("disabled", "disabled");
+    if(e.which === 13) {
+        var value = $(this).val();
+        if(value && value != '0')
+        {
+            //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
 
-        ReadCard(String($(this).val()));
-        $(this).val(null);
+            ReadCard(String(value));
+            $(this).val(null);
 
-        //Enable the textbox again if needed.
-        $(this).removeAttr("disabled");
+            //Enable the textbox again if needed.
+            $(this).removeAttr("disabled");
 
-        $(this).focus();
-     }
+            $(this).focus();
+        }
+    }
 });
