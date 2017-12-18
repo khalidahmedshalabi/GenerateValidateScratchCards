@@ -165,7 +165,10 @@ function RegisterCard(recharge_amount)
 
     // Apply recharge amount limitations
     if(recharge_amount > MAX_RECHARGE_AMOUNT || recharge_amount <= 0)
-        recharge_amount = MAX_RECHARGE_AMOUNT;
+    {
+        Log("invalid", "Amount cannot be greater than 100 or less than 1");
+        return;
+    }
 
     // Convert recharge amount into a string
     var recharge_amount_str = String(recharge_amount);
