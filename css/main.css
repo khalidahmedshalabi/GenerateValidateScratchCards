@@ -137,6 +137,38 @@ input
     color: #777777;
 }
 
+.compatibility_error
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+
+    display: none;
+}
+
+.compatibility_error div {
+    margin-top: 1%;
+    padding: 3%;
+    width: 30%;
+    border-radius: 13px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 122, 255, 1.0);
+    margin: auto;
+}
+
 /*
 a
 {

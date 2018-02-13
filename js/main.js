@@ -53,6 +53,7 @@ function ApplyCardAlgorithm_A(method, num, key)
 {
     if(method == METHOD_STRUCT)
     {
+        console.log(num);
         // Apply format preserving encryption
         return twist.encrypt(/[0-9]+/, num, key);
     }
@@ -65,7 +66,18 @@ function ApplyCardAlgorithm_A(method, num, key)
 
 function ApplyCardAlgorithm_B(method, num, key)
 {
-    // a different algorithm...
+    // Shall write a different algorithm here, but this is just a demo...
+
+    if(method == METHOD_STRUCT)
+    {
+        // Apply format preserving encryption
+        return twist.encrypt(/[0-9]+/, num, key);
+    }
+    else if(method == METHOD_DESTRUCT)
+    {
+        // Apply format preserving decryption
+        return twist.decrypt(/[0-9]+/, num, key);
+    }
 }
 
 // Determines an algorithm to use based on some factors
@@ -74,7 +86,7 @@ function DetermineCardAlgorithm(method, num)
     var d = new Date();
     switch(d.getFullYear())
     {
-        case 2017:
+        default:
         {
             if(d.getMonth() >= 6)
             {
@@ -208,24 +220,13 @@ function RegisterCard(recharge_amount)
 // Main function
 function main()
 {
-    Log("info", "Use the input boxes below to create a new card or check one that has already been created");
-    /*
-    // Create some cards with different recharge values
-    RegisterCard(25);
-    RegisterCard(45);
-    RegisterCard(50);
-    RegisterCard(70);
-    RegisterCard(35);
-    RegisterCard(25);
-    RegisterCard(20);
+    if(HashTable === undefined)
+    {
+        $(".compatibility_error").fadeIn(500);
+        return;
+    }
 
-    // Wait a second then check some cards
-    setTimeout(function () {
-        ReadCard(LastCreatedCardNum);
-        ReadCard("4881759144048530");
-        ReadCard(LastCreatedCardNum);
-    }, 1000);
-    */
+    Log("info", "Use the input boxes below to create a new card or check one that has already been created");
 }
 
 // Fire main function
